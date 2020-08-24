@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Monsieur+La+Doulaise&display=swap');
+
+// Base grayscale colors definitions
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+// Base colors definitions
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+// Theme color default definitions
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+// This table defines the theme colors (variant names)
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark
+  ),
+  $theme-colors
+);
+// Your variable overrides
+$body-bg: #f9f9ee;
+$sidebar-bg: #f2f2db;
+$body-color: $gray-900;
+$font-family-serif: 'IM Fell English', Georgia, "Times New Roman", Times, serif !default;
+$font-family-strong: 'IM Fell English SC', Georgia, "Times New Roman", Times, serif !default;
+
+$font-family-cursive: 'Monsieur La Doulaise', cursive !default;
+$font-family-base: $font-family-serif !default;
+html { 
+    font-size: 16px;
+}
+body { 
+    overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-family-strong;
+}
+.header img {
+    max-height: 200px;
+    &.float-left {
+        transform: scaleX(-1);
+    }
+}
+.header {
+    background-image: url('/header.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.b-sidebar-body {
+    background-color: $sidebar-bg;
+    a span {
+        color: $body-color;
+        opacity: .6;
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+.place h3 {
+    font-size: 1.15rem;
+}
+ol img {
+    max-width: 4rem;
+    margin: auto;
+}
+ul img {
+    max-width: 12rem;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: auto;
+    text-align: center;
+}
+nav {
+    font-family: $font-family-strong;
+    display:block;
+    font-size: 1.2rem;
+    ul {
+        text-align: left;
+    }
+}
+.GMap__Wrapper{
+    height: 100% !important;
+}
+.map {
+    min-height: 400px;
+}
+.payment {
+    min-height: 330px;
+}
+.thanks {
+    min-height: 100px;
+}
+.gallery .card {
+    min-height: 219px;
+    max-width: 219px;
+    margin: auto;
+    img {
+        min-height: 219px;
+        object-fit: cover;
+    }
+}
+@media (min-width: 576px) {
+    h1.secondary div {
+        display: inline
+    }
+    .payment {
+        min-height: 285px;
+    }
+    .gallery .card {
+        min-height: auto;
+        img {
+            min-height: auto;
+        }
+    }
+}
+
+.toggler-box {
+    background-color: transparent;
+    position: absolute;
+
+}
+button.toggler.navbar-toggler {
+    padding-top: 0;
+    padding-left: 0;
+    z-index:80000;
+}
+div[role=navigation] {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9ee;
+}
+div[role=navigation].stuck {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 5px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: .5s ease-in-out;
+}
+.place a, .link, .nav-item a span {
+    font-size: 1rem;
+    font-family: $font-family-strong;
+    text-decoration: none !important;
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+    vertical-align: bottom;
+    font-family: $font-family-strong;
+    transition: all .3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      color: $gray-900;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background-color:  $gray-900;
+        transition: all .3s;
+    }
+    &:active {
+        color:$body-color;
+    }
+}
+  
+h2::after {
+    content: "*******************";
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+.flourish {
+    font-family: $font-family-cursive !important;
+    font-size: 5rem;
+}
+.conjunction {
+    font-family: $font-family-strong !important;
+    font-size: 2.5rem;
+}
+// Quill Editor
+.ql-toolbar {
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+}
+.ql-container {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.ql-container {
+    font-family: $font-family-serif !important;
+}
+.modal-body, .modal-header, .modal-footer {
+    background-color: $body-color;
+}
+.modal-header, .modal-footer {
+    display: none !important    ;
+}
+.modal-body .img-fluid {
+    max-height:80vh;
+    width: auto !important;
+    margin: auto;
+}
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+// Settings
+// ==================================================
+$hamburger-padding-x           : 15px !default;
+$hamburger-padding-y           : 15px !default;
+$hamburger-layer-width         : 40px !default;
+$hamburger-layer-height        : 4px !default;
+$hamburger-layer-spacing       : 6px !default;
+$hamburger-layer-color         : $body-color !default;
+$hamburger-layer-border-radius : 4px !default;
+$hamburger-hover-opacity       : 0.7 !default;
+$hamburger-active-layer-color  : $hamburger-layer-color !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter   : false !default;
+$hamburger-hover-filter       : opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+
+// Hamburger
+// ==================================================
+.hamburger {
+    padding: $hamburger-padding-y $hamburger-padding-x;
+    display: inline-block;
+    cursor: pointer;
+  
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+  
+    // Normalize (<button>)
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+  
+    &:hover {
+      @if $hamburger-hover-use-filter == true {
+        filter: $hamburger-hover-filter;
+      }
+      @else {
+        opacity: $hamburger-hover-opacity;
+      }
+    }
+  
+    &.is-active {
+      &:hover {
+        @if $hamburger-hover-use-filter == true {
+          filter: $hamburger-active-hover-filter;
+        }
+        @else {
+          opacity: $hamburger-active-hover-opacity;
+        }
+      }
+  
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $hamburger-active-layer-color;
+      }
+    }
+  }
+  
+  .hamburger-box {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: $hamburger-layer-height / -2;
+  
+    &,
+    &::before,
+    &::after {
+      width: $hamburger-layer-width;
+      height: $hamburger-layer-height;
+      background-color: $hamburger-layer-color;
+      border-radius: $hamburger-layer-border-radius;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+  
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+    }
+  
+    &::before {
+      top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+  
+    &::after {
+      bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+  }
+
+  /*
+   * Squeeze
+   */
+   .hamburger--squeeze {
+    .hamburger-inner {
+      transition-duration: 0.075s;
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+      &::before {
+        transition: top 0.075s 0.12s ease,
+                    opacity 0.075s ease;
+      }
+
+      &::after {
+        transition: bottom 0.075s 0.12s ease,
+                    transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+    }
+
+    &.is-active {
+      .hamburger-inner {
+        transform: rotate(45deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &::before {
+          top: 0;
+          opacity: 0;
+          transition: top 0.075s ease,
+                      opacity 0.075s 0.12s ease;
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-90deg);
+          transition: bottom 0.075s ease,
+                      transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      }
+    }
+  }
+// Bootstrap and its default variables
+@import '../../node_modules/bootstrap/scss/bootstrap';
+// BootstrapVue and its default variables
+@import '../../node_modules/bootstrap-vue/src/index.scss';
