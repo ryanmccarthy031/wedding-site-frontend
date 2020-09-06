@@ -6,7 +6,7 @@
             v-for="(page, slug) in pages" 
             :key="`page_${slug}`" 
             :active="slug===currentSlug"
-            :to="slug==='home'? '/' : `${slug}`">
+            :to="{ path: slug==='home' ? '/' : `/${slug}` }">
             <span class="link">{{ page.title }}</span>
           </b-nav-item>
         </b-navbar-nav>

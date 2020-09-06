@@ -1,3 +1,4 @@
+import axios from 'axios'
 
 export default {
   /*
@@ -9,7 +10,7 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'server',
+  target: 'static',
   /*
   ** ENV variables
   */
@@ -89,17 +90,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    proxy: true,
   },
-  /*
-  ** Proxy
-  */
- proxy: {
-  '/api/': { 
-    target: `${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}`, 
-    pathRewrite: {'^/api': ''} 
-  }
-},
   /*
   ** Markdownit module configuration
   */
@@ -125,8 +116,44 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    babel: { compact: true },
   },
   generate: {
-    fallback: true
+    fallback: true,
+    async routes () {
+      const framework = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/framework`)
+      const carousel = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/carousel-photos`)
+      const pages = framework.data.pages.map(page=>{
+            if (page.slug==='home') {
+              page.slug='/'
+              page.carouselPhotos=carousel.data.photos.map(photo=>{
+                return {
+                  alternativeText: photo.alternativeText,
+                  url: photo.url,
+                }
+              })
+              page.names=framework.data.host_names.map(name=>name.person_name)
+            }
+            return {
+              route: page.slug,
+              payload: page,
+            }
+          })
+
+      return pages
+      // return axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/framework`)
+      //   .then(res=>{
+      //     return res.data.pages.map(page=>{
+      //       if (page.slug==='home') {
+      //         page.slug='/'
+      //       }
+      //       return {
+      //         route: page.slug,
+      //         payload: page,
+      //       }
+      //     })
+
+      //   })
+    },
   }
 }

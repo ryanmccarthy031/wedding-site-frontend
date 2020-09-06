@@ -11,7 +11,7 @@
                 <b-nav-item
                   v-for="(page, slug) in pages" 
                   :key="`page_${slug}`" 
-                  :to="slug==='home'? '/' : `${slug}`">
+                  :to="{ path: `/${slug}` }">
                     <span :class="currentSlug===slug ? 'active' : ''" >{{ page.title }}</span>
                 </b-nav-item>
               </ul>

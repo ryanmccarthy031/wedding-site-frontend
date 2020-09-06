@@ -24,8 +24,6 @@
             <b-carousel-slide
               v-for="(photo, index) in carouselPhotos"
               :key="`carousel-photo-${index}`"
-              :img-alt="photo.aternativeText"
-              :img-src="`${imgSrcRoot}${photo.url}`"></b-carousel-slide>
           </b-carousel>
         </b-col>
       </b-row>
@@ -114,10 +112,15 @@ export default {
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         { hid: 'description', name: 'description', content: 'My custom description' },
-        
       ]
     }
   },
+  async asyncData (ctx) {
+    console.log("!!!!!!!!!!!!!!!")
+    console.log(ctx)
+    if (ctx.payload) return { page: ctx.payload }
+  },
+
   computed: {
     imgSrcRoot () {
       return `${process.env.localUrl}/api`
@@ -126,7 +129,6 @@ export default {
         currentPage (state) {
           return state.pages[this.slug]
         },
-        carouselPhotos: 'carouselPhotos',
     }),
     slug () {
       return typeof this.$route.params.slug === 'undefined' ? 'home' : this.$route.params.slug
