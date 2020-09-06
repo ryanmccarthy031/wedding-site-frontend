@@ -73,7 +73,7 @@
                 if (this.allValid) {
                     this.logging_in = true
                     this.showError = false
-                    this.$axios.post(`${process.env.localUrl}/api/auth/local`, {
+                    this.$axios.post(`${process.env.baseUrl}/auth/local`, {
                         identifier: this.username,
                         password: this.password,
                     })

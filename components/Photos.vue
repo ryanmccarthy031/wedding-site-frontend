@@ -100,7 +100,7 @@
                 return false
             },
             imgSrcRoot () {
-            return `${process.env.localUrl}/api`
+            return `${process.env.baseUrl}`
             },
             unchunkedList () {
                 const unchunked = []
@@ -144,7 +144,7 @@
                 let auth = this.auth ? this.auth : jsCookie.get('auth')
                 if (auth === undefined) return
                 if (typeof auth==='string' && auth!=='undefined') auth=JSON.parse(auth)
-                const result = this.$axios.get(`${process.env.localUrl}/api/photos?_start=${this.page}&_limit=1`, {
+                const result = this.$axios.get(`${process.env.baseUrl}/photos?_start=${this.page}&_limit=1`, {
                     headers: {
                         authorization: `Bearer ${auth.jwt}`
                     }

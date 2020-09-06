@@ -130,7 +130,7 @@
                     data: guestData,
                 })
 
-                const { data } = await this.$axios.put(`${process.env.localUrl}/api/guests/${guestData._id}`, guestData)
+                const { data } = await this.$axios.put(`${process.env.baseUrl}/guests/${guestData._id}`, guestData)
                     .catch(()=>{
                         return this.$bvToast.toast('It looks like there was a problem saving your information. Please refresh your browser and try again.', {
                             title: `Oh no! Something went wrong.`,

@@ -68,15 +68,15 @@
                     this.searching=true
                     // TODO: There is a better way to do this with one call to the endpoint, but it will require some custom work on Strapi
                     // Also, fuzzy matching would be awesome, but I'm not quite sure how to get it.
-                    const { data } = await this.$axios.get(`${process.env.localUrl}/api/guests/count?name_contains=${encodeURIComponent(val)}`)
+                    const { data } = await this.$axios.get(`${process.env.baseUrl}/guests/count?name_contains=${encodeURIComponent(val)}`)
                     // TODO: Need some error handling here.
                     if (data===0) this.results = "It doesn't look like we invited anyone by that name. Are you sure you've got the right wedding?"
                     else if (data===1) {
-                        const { data } = await this.$axios.get(`${process.env.localUrl}/api/guests?name_contains=${encodeURIComponent(val)}`)
+                        const { data } = await this.$axios.get(`${process.env.baseUrl}/guests?name_contains=${encodeURIComponent(val)}`)
                         // TODO: Need some error handling here.
                         this.results = data[0]
                     } else {
-                        const { data } = await this.$axios.get(`${process.env.localUrl}/api/guests?name_contains=${encodeURIComponent(val)}`)
+                        const { data } = await this.$axios.get(`${process.env.baseUrl}/guests?name_contains=${encodeURIComponent(val)}`)
                         // TODO: Need some error handling here.
                         // TODO: We shouldn't really be getting this info on the frontend.
                         for (let i=0; i<data.length; i++) {

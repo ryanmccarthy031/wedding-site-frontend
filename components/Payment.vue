@@ -158,7 +158,7 @@ export default {
                     email: this.email,
                     token
                 }
-                const { data } = await this.$axios.post(`${process.env.localUrl}/api/gifts`, gift)
+                const { data } = await this.$axios.post(`${process.env.baseUrl}/gifts`, gift)
                 this.successfulCharge = true
             } catch (err) {
                 this.$bvToast.toast('It looks like there was a problem processing your gift.', {
