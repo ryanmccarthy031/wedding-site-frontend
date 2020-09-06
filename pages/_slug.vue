@@ -13,7 +13,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-container v-if="slug==='home' && carouselPhotos">
+    <b-container v-if="currentPage.carouselPhotos">
       <b-row  class="justify-content-md-center">
         <b-col md="8">
           <b-carousel
@@ -22,8 +22,9 @@
             controls
             indicators>
             <b-carousel-slide
-              v-for="(photo, index) in carouselPhotos"
-              :key="`carousel-photo-${index}`"
+              v-for="(photo, index) in currentPage.carouselPhotos"
+              :key="`carousel-photo-${index}`" 
+              :img-src="photo.url" />
           </b-carousel>
         </b-col>
       </b-row>
@@ -77,7 +78,7 @@
       </b-row>
     </b-container>
     <b-container
-      v-if="this.currentPage.is_photos">
+      v-if="currentPage.is_photos">
       <Photos />
     </b-container>
     <div
@@ -86,7 +87,7 @@
           <GuestFinder v-else />
     </div>
     <b-container
-      v-if="this.currentPage.is_payments">
+      v-if="currentPage.is_payments">
       <Payment />
     </b-container>
   </section>
@@ -115,21 +116,20 @@ export default {
       ]
     }
   },
+  async asyncData (ctx) {
+    if (ctx.payload) {
+      return {
+        currentPage: ctx.payload
+      }
+    } 
+  },
   computed: {
-    imgSrcRoot () {
-      return `${process.env.baseUrl}`
-    },
-    ...mapState({
-        currentPage (state) {
-          return state.pages[this.slug]
-        },
-    }),
     slug () {
       return typeof this.$route.params.slug === 'undefined' ? 'home' : this.$route.params.slug
     },
     places () {
       const places = []
-      for (let i=0; i<this.currentPage.places.length; i++) {
+      for (let i=0; i<(this.currentPage.places || []).length; i++) {
           const query = []
           const place = { ...this.currentPage.places[i] }
           place.showDate = true

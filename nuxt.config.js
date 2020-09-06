@@ -125,7 +125,7 @@ export default {
       const carousel = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/carousel-photos`)
       const pages = framework.data.pages.map(page=>{
             if (page.slug==='home') {
-              page.slug='/'
+              page.slug=''
               page.carouselPhotos=carousel.data.photos.map(photo=>{
                 return {
                   alternativeText: photo.alternativeText,
@@ -135,25 +135,11 @@ export default {
               page.names=framework.data.host_names.map(name=>name.person_name)
             }
             return {
-              route: page.slug,
+              route: `/${page.slug}`,
               payload: page,
             }
           })
-
       return pages
-      // return axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/framework`)
-      //   .then(res=>{
-      //     return res.data.pages.map(page=>{
-      //       if (page.slug==='home') {
-      //         page.slug='/'
-      //       }
-      //       return {
-      //         route: page.slug,
-      //         payload: page,
-      //       }
-      //     })
-
-      //   })
     },
   }
 }
