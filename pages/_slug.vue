@@ -115,12 +115,6 @@ export default {
       ]
     }
   },
-  async asyncData (ctx) {
-    console.log("!!!!!!!!!!!!!!!")
-    console.log(ctx)
-    if (ctx.payload) return { page: ctx.payload }
-  },
-
   computed: {
     imgSrcRoot () {
       return `${process.env.localUrl}/api`
