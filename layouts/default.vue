@@ -11,7 +11,7 @@
                 <b-nav-item
                   v-for="(page, slug) in pages" 
                   :key="`page_${slug}`" 
-                  :to="{ path: `/${slug}` }">
+                  :to="{ path: slug==='home' ? '/' : `/${slug}` }">
                     <span :class="currentSlug===slug ? 'active' : ''" >{{ page.title }}</span>
                 </b-nav-item>
               </ul>
@@ -69,27 +69,6 @@
   import Footer from '~/components/Footer'
 
   export default {
-    // mounted () {
-    //     let scrolled = false
-
-    //     /* Bind the scroll Event */
-    //     window.addEventListener('scroll', function(e) {
-    //         scrolled = true
-    //     });
-    //     const that = this
-    //     let timeout = setInterval(function() {
-    //         /* If the page was scrolled, handle the scroll */
-    //         if (scrolled) {
-    //             scrolled = false
-
-    //             if (that.$children[2].$el.getBoundingClientRect().y<5) {
-    //                 that.stuck=true
-    //             } else {
-    //                 that.stuck=false
-    //             }
-    //         }
-    //     }, 200);
-    // },
     components: {
       Footer,
     },

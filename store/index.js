@@ -6,6 +6,7 @@ export const state = () => ({
     names: [],
     currentGuest: {},
     songs: [],
+    carouselPhotos: [],
     photos: [],
     auth: null,
 })
@@ -21,9 +22,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit ({ commit, dispatch }) {
+  async nuxtServerInit ({ commit, dispatch }, { req }) {
     // TODO: I need some error handling here
-    console.log("!!!!!!!")
     // Get framework for the whole site.
     const { data } = await axios.get(`${process.env.baseUrl}/framework`)
 
@@ -34,6 +34,15 @@ export const actions = {
     // Extract wedding host names from the framework
     const names = data.host_names.map(name=>name.person_name)
     await commit('add', { entity: 'names', data: names })
+
+    // Get carousel photos
+    const carousel = await axios.get(`${process.env.baseUrl}/carousel-photos`)
+    await commit('add', { entity: 'carouselPhotos', data: carousel.data.photos.map(photo=>{
+      return {
+        alternativeText: photo.alternativeText,
+        url: photo.url,
+      }
+    })})
   },
   keyObj ({commit}, { array, key }) {
     const obj = {}
