@@ -52,7 +52,7 @@
                 return {
                     icon: {
                         path: 'M 0,0 C -12,-20 -10,-22 -10,-25 A 10,10 0 1,1 10,-25 C 10,-25 12,-20 0,0 z',
-                        fillColor: '#1c1900',
+                        fillColor: '#33322a',
                         fillOpacity: 1,
                         strokeColor: '#f2f1e9',
                         strokeWeight: 1,
