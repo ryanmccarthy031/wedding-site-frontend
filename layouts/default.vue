@@ -29,27 +29,29 @@
             </template>
           </b-navbar-toggle>
         </div>
-      <b-row class="py-3 justify-content-md-center header">
-          <b-col>
-            <h1 :class="currentSlug==='home' ? 'home' : 'secondary text-center'">
-                <span
-                  v-for="(name, index) in $store.state.names">
-                    <b-row  class="text-center p-0 m-0">
-                      <b-col class=" p-0 m-0">
-                        <span class='mx-auto flourish'>{{name}}</span>
-                      </b-col>
-                    </b-row>
-                    <b-row class="p-0 m-0">
-                      <b-col  class="text-center p-0 m-0">
-                        <span class='mx-auto conjunction' sm v-if="index<$store.state.names.length - 1" >
-                          and
-                        </span>
-                      </b-col>
-                    </b-row>
+      <b-row class="p-0 justify-content-md-center header">
+          <div class="py-3 h-100 w-100 screen">
+            <b-col>
+              <h1 :class="currentSlug==='home' ? 'home' : 'secondary text-center'">
+                  <span
+                    v-for="(name, index) in $store.state.names">
+                      <b-row  class="text-center p-0 m-0">
+                        <b-col class=" p-0 m-0">
+                          <span class='mx-auto flourish'>{{name}}</span>
+                        </b-col>
+                      </b-row>
+                      <b-row class="p-0 m-0">
+                        <b-col  class="text-center p-0 m-0">
+                          <span class='mx-auto conjunction' sm v-if="index<$store.state.names.length - 1" >
+                            and
+                          </span>
+                        </b-col>
+                      </b-row>
 
-                </span>
-            </h1>
-          </b-col>
+                  </span>
+              </h1>
+            </b-col>
+          </div>
       </b-row>
 
     <Navbar 

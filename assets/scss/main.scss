@@ -76,9 +76,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 .header {
     background-image: url('/header.png');
-    background-position: center bottom;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    .screen {
+      background-image: linear-gradient(0, #f9f9ee, transparent 95%);
+    }
 }
 .b-sidebar-body {
     background-color: $sidebar-bg;
