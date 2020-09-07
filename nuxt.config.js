@@ -43,7 +43,6 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/fonts/fonts.css',
     '@/assets/scss/main.scss',
   ],
   /*
@@ -78,6 +77,7 @@ export default {
     // Doc: https://gitlab.com/broj42/nuxt-gmaps
     ['nuxt-gmaps',{ key: process.env.GMAPS_API_KEY }],
     ['vue-currency-input/nuxt', { globalOptions: { currency: 'USD'} }],
+    'nuxt-webfontloader',
   ],
   /*
   ** Bootstrap-Vue module configuration
@@ -110,6 +110,26 @@ export default {
       endYear: parseInt(process.env.TIMEZONE_END_YEAR, 10) || 2030,
     },
     defaultTimezone: 'America/Los_Angeles',
+  },
+  /*
+  ** Web Font Loader module configuration
+  */
+  webfontloader: {
+    custom: {
+      families: [
+        'IM Fell English:n4',
+        'IM Fell English SC:n4',
+        'Monsieur La Doulaise:n4',
+      ],
+      urls: [
+          // for each Google Fonts add url + options you want
+          // here add font-display option
+          'https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap',
+          'https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap',
+          'https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap',
+      ]
+    },
+    timeout: 2000,
   },
   /*
   ** Build configuration
