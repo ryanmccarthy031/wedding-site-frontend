@@ -99,9 +99,6 @@
                 }
                 return false
             },
-            imgSrcRoot () {
-            return `${process.env.baseUrl}`
-            },
             unchunkedList () {
                 const unchunked = []
                 for (let i=0; i<this.list.length; i++) {
@@ -155,8 +152,8 @@
                             const photoArray = result.data[0].Photos.map(photo=>{
                                 return {
                                     alt: photo.alternativeText,
-                                    src: `${this.imgSrcRoot}${photo.formats.large.url}`,
-                                    thumbnail: `${this.imgSrcRoot}${photo.formats.thumbnail.url}`,
+                                    src: `${photo.formats.large.url}`,
+                                    thumbnail: `${photo.formats.thumbnail.url}`,
                                 }
                             })
                             const chunkedArray = this.chunk(photoArray, 4)
