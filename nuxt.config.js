@@ -63,6 +63,7 @@ export default {
   buildModules: [
       // Doc: https://www.npmjs.com/package/@nuxtjs/moment
       '@nuxtjs/moment',
+      'nuxt-webfontloader',
   ],
   /*
   ** Nuxt.js modules
@@ -76,8 +77,6 @@ export default {
     '@nuxtjs/markdownit',
     // Doc: https://gitlab.com/broj42/nuxt-gmaps
     ['nuxt-gmaps',{ key: process.env.GMAPS_API_KEY }],
-    ['vue-currency-input/nuxt', { globalOptions: { currency: 'USD'} }],
-    'nuxt-webfontloader',
   ],
   /*
   ** Bootstrap-Vue module configuration

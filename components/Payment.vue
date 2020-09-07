@@ -17,15 +17,13 @@
                                     </b-form-input>
                                 </b-col>
                                 <b-col sm="4">
-                                    <b-form-input 
-                                        class="mb-2"
-                                        placeholder="Amount" 
+                                    <currency-input
+                                        class="form-control"
                                         v-model="amount"
                                         @input="validate('amount')"
-                                        :state="isValid.amount"
-                                        v-currency="{currency: 'USD', locale: 'en'}"
-                                        trim>
-                                    </b-form-input>
+                                        currency="USD"
+                                        locale="en"
+                                    />
                                 </b-col>
                             </b-row>
                             <b-row>
@@ -88,7 +86,7 @@
 
 <script>
     import { Card, createToken } from 'vue-stripe-elements-plus'
-    import { CurrencyDirective } from 'vue-currency-input'
+    import { CurrencyInput } from 'vue-currency-input'
 
 
 export default {
@@ -110,9 +108,6 @@ export default {
             }
         }
     },
-    directives: {
-        currency: CurrencyDirective
-    },
     computed: {
         publicKey () {
             return process.env.stripePublicKey
@@ -124,7 +119,7 @@ export default {
             return true
         },
     },
-    components: { Card },
+    components: { Card, CurrencyInput, },
     methods: {
         validate (key) {
             if (key==='amount') return this.isValid.amount = this.amount===null || this.amount<=0.50 ? false : null
@@ -153,7 +148,7 @@ export default {
             }
             try {
                 const gift = {
-                    amount: this.$parseCurrency(this.amount),
+                    amount: this.amount,
                     name: this.name,
                     email: this.email,
                     token
