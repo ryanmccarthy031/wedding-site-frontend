@@ -19,6 +19,7 @@
                                 <b-col sm="4">
                                     <currency-input
                                         class="form-control mb-2"
+                                        placeholder="Amount"
                                         v-model="amount"
                                         @input="validate('amount')"
                                         currency="USD"
