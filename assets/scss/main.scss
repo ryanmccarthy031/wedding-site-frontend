@@ -117,6 +117,12 @@ ul {
     margin: auto;
     text-align: center;
 }
+.activities ul ul {
+  text-align: left;
+  li {
+    margin-bottom: $spacer;
+  }
+}
 nav {
     font-family: $font-family-strong;
     display:block;
