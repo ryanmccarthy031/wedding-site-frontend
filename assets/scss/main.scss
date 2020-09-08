@@ -23,10 +23,10 @@ $font-family-cursive: 'Monsieur La Doulaise', cursive !default;
 $font-family-base: $font-family-serif !default;
 html { 
     font-size: 16px;
-    font-family: $font-family-base;
 }
 body { 
     overflow-x: hidden;
+    font-family: $font-family-base;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-strong;
@@ -85,7 +85,12 @@ ul {
 .activities ul {
   text-align: left;
   li {
+    margin: auto;
     margin-bottom: $spacer;
+    max-width: 30rem;
+    &:after {
+      background-image: url('/narrow-divider.png');
+    }
   }
 }
 nav {
