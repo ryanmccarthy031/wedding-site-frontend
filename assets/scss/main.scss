@@ -26,7 +26,7 @@ html {
 }
 body { 
     overflow-x: hidden;
-    font-family: $font-family-base;
+    font-family: $font-family-base !important;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-strong;
@@ -88,9 +88,6 @@ ul {
     margin: auto;
     margin-bottom: $spacer;
     max-width: 30rem;
-    &:after {
-      background-image: url('/narrow-divider.png');
-    }
   }
 }
 nav {
