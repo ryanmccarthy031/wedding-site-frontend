@@ -161,11 +161,8 @@ div[role=navigation].stuck {
     padding-bottom: 10px;
     transition: .5s ease-in-out;
 }
-.modal-backdrop {
-  background-color: $body-bg !important;
-}
-.bg-dark {
-  background-color: $body-bg !important;
+.modal-backdrop, .bg-dark {
+  background-color: $body-color !important;
 }
 .place a, .link, .nav-item a span {
     font-size: 1rem;
