@@ -35,7 +35,7 @@
         <b-col
           :md="hasCoords ? 6 : 12">
           <component :is="hasCoords? 'ol' : 'ul'">
-            <li :class="[{'pl-4' : hasCoords}, { slug: slug }, 'place', 'mb-4']"
+            <li :class="[{'pl-4' : hasCoords}, slug, 'place', 'mb-4']"
               v-for="(place, index) of places">
               <h3>{{place.name}}</h3>
               <div v-if="place.showDate && place.date_time"></div>
