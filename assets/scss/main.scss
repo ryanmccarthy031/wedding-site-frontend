@@ -23,6 +23,7 @@ $font-family-cursive: 'Monsieur La Doulaise', cursive !default;
 $font-family-base: $font-family-serif !default;
 html { 
     font-size: 16px;
+    font-family: $font-family-base;
 }
 body { 
     overflow-x: hidden;
