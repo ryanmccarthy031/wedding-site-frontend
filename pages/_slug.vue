@@ -38,13 +38,12 @@
             <li :class="[{'pl-4' : hasCoords}, slug, 'place', 'mb-4']"
               v-for="(place, index) of places">
               <h3>{{place.name}}</h3>
-              <div v-if="place.showDate && place.date_time"></div>
+              <div v-if="place.place_name">{{place.place_name}}</div>
               <div v-if="place.date_time">
-                <span v-if="place.showDate">{{$moment(place.date_time).tz("America/Los_Angeles").format("D MMMM YYYY")}}, </span>
+                <span v-if="place.showDate">{{$moment(place.date_time).tz("America/Los_Angeles").format("D MMMM YYYY")}},</span>
                 <span>{{$moment(place.date_time).tz("America/Los_Angeles").format("h:mmA")}}</span>
               </div>
               <div v-if="place.text" v-html="$md.render(place.text)"></div>
-              <div v-if="place.place_name">{{place.place_name}}</div>
               <a v-if="place.website" class="link" :href="place.website" target="_blank">Website</a>
               <Address
                 class="address"
