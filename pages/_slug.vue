@@ -111,7 +111,8 @@ export default {
       title: this.slug==='home' ? this.$store.state.names.join(' & ') : `${this.currentPage.title} | ${this.$store.state.names.join(' & ') }`,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: 'My custom description' },
+        { hid: 'description', name: 'description', content: 'Wedding webside for Leigh Graziano and Ryan McCarthy, June 17th, 2021.' },
+        { hid: 'robots', name: 'robots', content: 'noindex, nofollow' },
       ]
     }
   },
