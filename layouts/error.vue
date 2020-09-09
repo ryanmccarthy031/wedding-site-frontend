@@ -17,6 +17,13 @@
 export default {
   name: 'nuxt-error',
   layout: 'default', // optional
+  async asyncData (ctx) {
+    if (ctx.payload) {
+      return {
+        currentPage: ctx.payload
+      }
+    } 
+  },
   head () {
     return {
       title: `Error | ${this.$store.state.names.join(' & ') }`,
