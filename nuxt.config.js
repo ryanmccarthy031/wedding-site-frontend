@@ -144,7 +144,7 @@ export default {
     babel: { compact: true },
   },
   generate: {
-    fallback: 'index.html',
+    fallback: true,
     async routes () {
       const framework = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/framework`)
       const carousel = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/carousel-photos`)
