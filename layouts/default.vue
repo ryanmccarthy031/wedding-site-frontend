@@ -79,9 +79,9 @@
         'pages',
       ]),
       currentSlug () {
-        console.log()
-        if (!this.pages.find(page=>page.slug===this.$route.params.slug)) {
-          return 'error'
+        const found = false
+        for (const key in pages) {
+          if (pages[key].slug===this.$route.params.slug) return 'error'
         }
         return typeof this.$route.params.slug === 'undefined' ? 'home' : this.$route.params.slug
       },
