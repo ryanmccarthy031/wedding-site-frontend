@@ -74,6 +74,32 @@
     components: {
       Footer,
     },
+    async created () {
+      if (!(this.pages || []).length) {
+        const framework = await this.$axios.get(`${process.env.baseUrl}/framework`)
+        const carousel = await this.$axios.get(`${process.env.baseUrl}/carousel-photos`)
+        const pages = framework.data.pages.map(page=>{
+              if (page.slug==='home') {
+                page.slug=''
+                page.carouselPhotos=carousel.data.photos.map(photo=>{
+                  return {
+                    alternativeText: photo.alternativeText,
+                    url: photo.url,
+                  }
+                })
+                page.names=framework.data.host_names.map(name=>name.person_name)
+              }
+              return {
+                route: `/${page.slug}`,
+                payload: page,
+              }
+            })
+            this.$store.commit('add', {
+                entity: 'pages',
+                data: pages,
+            })
+      }
+    }
     computed: {
       ...mapState([
         'pages',
