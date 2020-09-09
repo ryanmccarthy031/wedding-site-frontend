@@ -86,10 +86,5 @@
         return typeof this.$route.params.slug === 'undefined' ? 'home' : this.$route.params.slug
       },
     },
-    data () {
-        return {
-            stuck: false,
-        }
-    },
   }
 </script>
