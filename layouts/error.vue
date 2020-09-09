@@ -4,7 +4,7 @@
             <b-col md="8">
             <h2 class="text-center mb-5">Error</h2>
             <div class="content columns is-mobile">
-                <div class="text-justify">
+                <div class="text-center">
                     <div class="nuxt-error">{{ errorMessage }}</div>
                 </div>
             </div>
