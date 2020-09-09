@@ -1,5 +1,4 @@
 import axios from 'axios'
-import cookieparser from 'cookieparser'
 
 export const state = () => ({
     pages: [],
