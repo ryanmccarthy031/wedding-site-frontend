@@ -32,7 +32,6 @@ export const actions = {
     // Extract wedding host names from the framework
     const names = data.host_names.map(name=>name.person_name)
     await commit('add', { entity: 'names', data: names })
-
   },
   keyObj ({commit}, { array, key }) {
     const obj = {}

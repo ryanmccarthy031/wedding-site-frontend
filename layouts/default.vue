@@ -79,10 +79,6 @@
         'pages',
       ]),
       currentSlug () {
-        const found = false
-        for (const key in this.pages) {
-          if (this.pages[key].slug===this.$route.params.slug) return 'error'
-        }
         return typeof this.$route.params.slug === 'undefined' ? 'home' : this.$route.params.slug
       },
     },
