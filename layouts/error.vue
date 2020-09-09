@@ -20,7 +20,7 @@ export default {
     layout: 'default', // optional
     head () {
         return {
-            title: `Error | ${this.$store.state.names.join(' & ') }`,
+            title: `Error`,
             meta: [
                 // hid is used as unique identifier. Do not use `vmid` for it as it will not work
                 { hid: 'description', name: 'description', content: 'Wedding webside for Leigh Graziano and Ryan McCarthy, June 17th, 2021.' },
