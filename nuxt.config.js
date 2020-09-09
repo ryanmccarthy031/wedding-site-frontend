@@ -1,6 +1,12 @@
 import axios from 'axios'
 
 export default {
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: true,
+    }
+  },
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
