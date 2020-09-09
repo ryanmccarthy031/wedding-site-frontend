@@ -1,6 +1,6 @@
 <template>
   <div class="nuxt-error">
-    {{ message }}
+    {{ errorMessage }}
   </div>
 </template>
 <script>
@@ -14,18 +14,13 @@ export default {
       default: () => {},
     },
   },
-  data () {
-      return {
-          message: ''
-      }
-  },
   computed: {
-    errorPage() {
+    errorMessage() {
       if (this.error.statusCode === 404) {
-        return this.message="Oops! 404 Error."
+        return "Oops! 404 Error."
       }
       // catch everything else
-      return this.message='Oh no. Something has gone wrong.'
+      return 'Oh no. Something has gone wrong.'
     },
   }
 }
