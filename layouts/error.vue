@@ -25,7 +25,8 @@ export default {
         return this.message="Oops! 404 Error."
       }
       // catch everything else
-      return this.message='Oh no. Something has gone wrong.';
+      return this.message='Oh no. Something has gone wrong.'
     },
-};
+  }
+}
 </script>
