@@ -144,7 +144,7 @@ export default {
     babel: { compact: true },
   },
   generate: {
-    fallback: true,
+    fallback: 'index.html',
     async routes () {
       const framework = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/framework`)
       const carousel = await axios.get(`${process.env.PROTOCOL || 'http://'}${process.env.BASE_NAME || 'localhost'}/carousel-photos`)
@@ -164,6 +164,9 @@ export default {
               payload: page,
             }
           })
+      for (const key in pages) {
+        if (!pages[key].payload.is_included) delete pages[key]
+      }
       return pages
     },
   }
