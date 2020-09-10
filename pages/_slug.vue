@@ -31,9 +31,10 @@
     </b-container>
     <b-container
       v-if="places.length">
-      <b-row>
+      <b-row class="justify-content-center">
         <b-col
-          :md="hasCoords ? 6 : 12">
+           lg="6"
+          :md="hasCoords ? 6 : 8">
           <component :is="hasCoords? 'ol' : 'ul'">
             <li :class="[{'pl-4' : hasCoords}, slug, 'place', 'mb-4']"
               v-for="(place, index) of places">
