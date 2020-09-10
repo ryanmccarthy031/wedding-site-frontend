@@ -1,7 +1,7 @@
 <template>
     <b-container>
             <b-row :class="successfulCharge ? 'thanks' : 'payment' " class="justify-content-md-center">
-                <b-col lg="6">
+                <b-col lg="6" md="8">
                     <transition name="slide-out">
                         <b-card  v-if="!successfulCharge"  class="w-100 position-absolute justify-content-md-center">
                             <b-card-title>Honeymoon Fund</b-card-title>
