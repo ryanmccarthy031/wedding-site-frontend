@@ -117,6 +117,10 @@ export default {
                     base: {
                         fontFamily: "'IM Fell English', Georgia, 'Times New Roman', Times, serif",
                         fontSize: '18px',
+                        color: '#33322a',
+                        '::placeholder': {
+                            color: '#777d62',
+                        },
                     },
                 },
             },
@@ -184,63 +188,63 @@ export default {
 </script> 
  
 <style>
-    .StripeElement {
-        display: block;
-        width: 100%;
-        height: calc(1.5em + 0.75rem + 2px);
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        font-family: "IM Fell English";
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
+  .StripeElement {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #777d62;
+    background-color: #fff;
+    background-clip: padding-box;
+    font-family: "IM Fell English";
+    border: 1px solid #cdd0ae;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 
-    .StripeElement--focus {
-        color: #495057;
-        background-color: #fff;
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
+.StripeElement--focus {
+    color: #777d62;
+    background-color:#fff;
+    border-color: #79b4f3;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
 
-    .StripeElement--invalid {
-        border-color: #fa755a;
-    }
+.StripeElement--invalid {
+    border-color: #c00505;
+}
 
-    .StripeElement--webkit-autofill {
-        background-color: #fefde5 !important;
-    }
+.StripeElement--webkit-autofill {
+    background-color: #f2f1e9 !important;
+}
 
-    /* Enter and leave animations can use different */
-    /* durations and timing functions.              */
-    .slide-in-enter-active {
-        transition: all .3s ease;
-    }
-    .slide-in-leave-active {
-        transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .slide-in-enter, .slide-in-leave-to
-        /* .slide-fade-leave-active below version 2.1.8 */ {
-        transform: translateX(150px);
-        opacity: 0;
-    }
-    /* Enter and leave animations can use different */
-    /* durations and timing functions.              */
-    .slide-out-enter-active {
-        transition: all .3s ease;
-    }
-    .slide-out-leave-active {
-        transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .slide-out-enter, .slide-out-leave-to
-        /* .slide-fade-leave-active below version 2.1.8 */ {
-        transform: translateX(-150px);
-        opacity: 0;
-    }
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-in-enter-active {
+    transition: all .3s ease;
+}
+.slide-in-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-in-enter, .slide-in-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(150px);
+    opacity: 0;
+}
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-out-enter-active {
+    transition: all .3s ease;
+}
+.slide-out-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-out-enter, .slide-out-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(-150px);
+    opacity: 0;
+}
 </style> 
