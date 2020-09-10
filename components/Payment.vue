@@ -105,8 +105,21 @@ export default {
             successfulCharge: false,
             loading: false,
             stripeOptions: {
-                // see https://stripe.com/docs/stripe.js#element-options for details
-            }
+                elements: {
+                    fonts: [{
+                        family: "IM Fell English",
+                        src: 'url("assets/fonts/IM_Fell_English")',
+                        unicodeRange: 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD',
+                        display: 'swap',
+                    }],
+                },
+                style: {
+                    base: {
+                        fontFamily: "'IM Fell English', Georgia, 'Times New Roman', Times, serif",
+                        fontSize: '18px',
+                    },
+                },
+            },
         }
     },
     computed: {
@@ -182,6 +195,7 @@ export default {
         color: #495057;
         background-color: #fff;
         background-clip: padding-box;
+        font-family: "IM Fell English";
         border: 1px solid #ced4da;
         border-radius: 0.25rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
