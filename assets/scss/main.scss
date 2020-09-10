@@ -1,26 +1,68 @@
+$white: #fff;
+$gray-100: #f2f1e9;
+$gray-200: #edebda;
+$gray-300: #d6d8b1;
+$gray-400: #cdd0ae;
+$gray-500: #adb59d;
+$gray-600: #777d62;
+$gray-700: #454534;
+$gray-800: #33322a;
+$gray-900: #2b2b26;
+$black: #000;
+
+// Base colors definitions
+$blue: #1373da;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #c00505;
+$orange: #fd7e14;
+$yellow: #ffe600;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #2b92a2;
+
+// Theme color default definitions
+$primary: $blue;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $orange;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+// This table defines the theme colors (variant names)
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark
+  ),
+  $theme-colors
+);
+
+$body-bg: $gray-100;
+$sidebar-bg: $gray-200;
+$body-color: $gray-800;
+
+$font-family-serif: 'IM Fell English', Georgia, "Times New Roman", Times, serif;
+$font-family-strong: 'IM Fell English SC', Georgia, "Times New Roman", Times, serif;
+
+$font-family-cursive: 'Monsieur La Doulaise', cursive;
+$font-family-base: $font-family-serif;
+
+$enable-responsive-font-sizes: true;
+
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
-
-$gray-100: #f2f1e9 !default;
-$gray-200: #edebda !default;
-$gray-300: #d6d8b1 !default;
-$gray-400: #cdd0ae !default;
-$gray-500: #adb59d !default;
-$gray-600: #777d62 !default;
-$gray-700: #454534 !default;
-$gray-800: #33322a !default;
-$gray-900: #2b2b26 !default;
-
-$body-bg: #f2f1e9;
-$sidebar-bg: #edebda;
-$body-color: #33322a;
-
-$font-family-serif: 'IM Fell English', Georgia, "Times New Roman", Times, serif !default;
-$font-family-strong: 'IM Fell English SC', Georgia, "Times New Roman", Times, serif !default;
-
-$font-family-cursive: 'Monsieur La Doulaise', cursive !default;
-$font-family-base: $font-family-serif !default;
 
 // Bootstrap and its default variables
 @import '../../node_modules/bootstrap/scss/bootstrap';
@@ -168,7 +210,7 @@ div[role=navigation].stuck {
   background-color: $body-color !important;
 }
 .content p:first-of-type::first-letter {
-  color: #903;
+  color: $danger;
   float: left;
   font-size: 3rem;
   line-height: 2.3rem;
@@ -188,10 +230,16 @@ div[role=navigation].stuck {
     position: relative;
     overflow: hidden;
 
-    &:hover {
-      color: $gray-900;
+    &:hover, &:focus {
+      color: darken($primary, 20%);
     }
-    &:hover::after {
+    &:active {
+      color: $yellow;
+      &::after {
+        background-color: $yellow;
+      }
+    }
+    &:hover::after, &:focus::after {
         width: 100%;
     }
     &::after {
@@ -201,11 +249,8 @@ div[role=navigation].stuck {
         left: 0;
         width: 0%;
         height: 1px;
-        background-color:  $gray-900;
+        background-color: darken($primary, 20%);
         transition: all .3s;
-    }
-    &:active {
-        color:$body-color;
     }
 }
   
@@ -256,23 +301,23 @@ h2::after {
 
 // Settings
 // ==================================================
-$hamburger-padding-x           : 15px !default;
-$hamburger-padding-y           : 15px !default;
-$hamburger-layer-width         : 40px !default;
-$hamburger-layer-height        : 4px !default;
-$hamburger-layer-spacing       : 6px !default;
-$hamburger-layer-color         : $body-color !default;
-$hamburger-layer-border-radius : 4px !default;
-$hamburger-hover-opacity       : 0.7 !default;
-$hamburger-active-layer-color  : $hamburger-layer-color !default;
-$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+$hamburger-padding-x           : 15px;
+$hamburger-padding-y           : 15px;
+$hamburger-layer-width         : 40px;
+$hamburger-layer-height        : 4px;
+$hamburger-layer-spacing       : 6px;
+$hamburger-layer-color         : $body-color;
+$hamburger-layer-border-radius : 4px;
+$hamburger-hover-opacity       : 0.7;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
 
 // To use CSS filters as the hover effect instead of opacity,
 // set $hamburger-hover-use-filter as true and
 // change the value of $hamburger-hover-filter accordingly.
-$hamburger-hover-use-filter   : false !default;
-$hamburger-hover-filter       : opacity(50%) !default;
-$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+$hamburger-hover-use-filter   : false;
+$hamburger-hover-filter       : opacity(50%);
+$hamburger-active-hover-filter: $hamburger-hover-filter;
 
 // Hamburger
 // ==================================================
