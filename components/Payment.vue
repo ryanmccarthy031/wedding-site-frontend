@@ -1,7 +1,7 @@
 <template>
     <b-container>
             <b-row :class="successfulCharge ? 'thanks' : 'payment' " class="justify-content-md-center">
-                <b-col lg="8">
+                <b-col lg="6">
                     <transition name="slide-out">
                         <b-card  v-if="!successfulCharge"  class="w-100 position-absolute justify-content-md-center">
                             <b-card-title>Honeymoon Fund</b-card-title>
@@ -74,7 +74,7 @@
                     </transition>
                 </b-col>
             </b-row>
-        <b-row class="pl-4 justify-content-center">   
+        <b-row class="pl-4 mt-4 justify-content-center">   
             <b-button 
                 href="http://www.zola.com/registry/leighandryan2021"
                 variant="outline-primary"

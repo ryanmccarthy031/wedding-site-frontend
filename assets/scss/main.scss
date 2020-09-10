@@ -28,7 +28,7 @@ $font-family-base: $font-family-serif !default;
 @import '../../node_modules/bootstrap-vue/src/index.scss';
 
 html { 
-    font-size: 16px;
+    font-size: 18px;
 }
 body { 
     overflow-x: hidden;
@@ -99,7 +99,7 @@ ul {
 nav {
     font-family: $font-family-strong;
     display:block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     ul {
         text-align: left;
     }
@@ -214,11 +214,11 @@ h2::after {
 }
 .flourish {
     font-family: $font-family-cursive !important;
-    font-size: 5rem;
+    font-size: 4.25rem;
 }
 .conjunction {
     font-family: $font-family-strong !important;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 // Quill Editor
 .ql-toolbar {

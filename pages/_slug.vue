@@ -2,7 +2,7 @@
   <section class="section">
     <b-container>
       <b-row class="justify-content-md-center">
-        <b-col md="8">
+        <b-col lg="6" md="8">
           <h2 class="text-center mb-5">{{currentPage.title}}</h2>
           <div class="content columns is-mobile">
             <div class="text-justify"
@@ -15,7 +15,7 @@
     </b-container>
     <b-container v-if="currentPage.carouselPhotos">
       <b-row  class="justify-content-md-center">
-        <b-col md="8">
+        <b-col lg="6" md="8">
           <b-carousel
             id="carousel-fade"
             fade
