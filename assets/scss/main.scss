@@ -195,6 +195,13 @@ button.toggler.navbar-toggler {
     padding-left: 0;
     z-index:80000;
 }
+.card-header {
+  background-color: $gray-200;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  background-color: $white;
+  border-bottom-color: $white;
+}
 div[role=navigation] {
     position: sticky;
     top: 0;
