@@ -37,6 +37,9 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-strong;
 }
+strong {
+  font-family: $font-family-strong;
+}
 .header img {
     max-height: 200px;
     &.float-left {
