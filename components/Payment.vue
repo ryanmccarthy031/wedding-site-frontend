@@ -80,7 +80,7 @@
                     </transition>
                 </b-col>
             </b-row>
-        <b-row class="pl-4 mt-4 justify-content-center">   
+        <b-row class="mt-4 justify-content-center">   
             <b-button 
                 href="http://www.zola.com/registry/leighandryan2021"
                 variant="outline-primary"
