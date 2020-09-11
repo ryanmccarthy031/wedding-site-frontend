@@ -224,7 +224,7 @@ export default {
 }
 
 .StripeElement--webkit-autofill {
-    background-color: #f2f1e9 !important;
+    background-color: #fcfbf3 !important;
 }
 
 /* Enter and leave animations can use different */

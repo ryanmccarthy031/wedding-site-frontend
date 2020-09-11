@@ -54,7 +54,7 @@
                         path: 'M 0,0 C -12,-20 -10,-22 -10,-25 A 10,10 0 1,1 10,-25 C 10,-25 12,-20 0,0 z',
                         fillColor: '#33322a',
                         fillOpacity: 1,
-                        strokeColor: '#f2f1e9',
+                        strokeColor: '#fcfbf3',
                         strokeWeight: 1,
                         scale: 1.25,
                         labelOrigin: {
@@ -64,7 +64,7 @@
                     },
                     label: {
                         text: label.toString(),
-                        color: "#f2f1e9",
+                        color: "#fcfbf3",
                         fontSize: "1rem",
                         fontFamily: 'IM Fell English',
                     },
