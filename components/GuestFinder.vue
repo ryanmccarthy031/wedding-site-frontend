@@ -2,8 +2,8 @@
     <b-row class="justify-content-md-center">
         <b-col md="8">
             <label for="name">Enter your name as it appears on the invitation</label>
-            <b-input-group class="mb-4">
                 <b-form-input 
+                    class="mb-4"
                     type="text"
                     id="name" 
                     v-model="name" 
@@ -11,13 +11,6 @@
                     placeholder="Enter your name">
                     <b-spinner small variant="primary" type="grow" label="Spinning"></b-spinner>
                 </b-form-input>
-
-                <b-input-group-append
-                    v-if="!searching">
-                    
-                </b-input-group-append>
-            </b-input-group>
-            <!-- TODO: Position this spinner inside the input div-->
             <b-spinner 
                 v-if="searching"
                 type="grow" 
