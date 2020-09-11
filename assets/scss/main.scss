@@ -107,6 +107,12 @@ strong {
     }
 
 }
+footer .row div {
+  background-image: url('/footer.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+}
 .b-sidebar-body {
     background-color: $sidebar-bg;
     a span {
@@ -140,6 +146,25 @@ ul {
     margin-bottom: $spacer;
     max-width: 30rem;
   }
+}
+li.narrow:after {
+  height: 30px;
+  background-image: url('/narrow-divider.png');
+  background-position: 20% 50%;
+
+}
+li.wide:after {
+  height: 40px;
+  background-image: url('/wide-divider.png');
+  background-position: center;
+}
+li:after {
+  display:block;
+  margin-top: $spacer;
+  content: '';
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 nav {
     font-family: $font-family-strong;

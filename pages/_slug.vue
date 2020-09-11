@@ -41,7 +41,15 @@
            lg="6"
           :md="hasCoords ? 6 : 8">
           <component :is="hasCoords? 'ol' : 'ul'">
-            <li :class="[{'pl-4' : hasCoords}, slug, 'place', 'mb-4']"
+            <li 
+              :class="[
+                {'pl-4' : hasCoords}, 
+                {'narrow' : index!==places.length-1 && hasCoords},
+                {'wide' : index!==places.length-1 && !hasCoords},
+                slug, 
+                'place', 
+                'mb-4'
+              ]"
               v-for="(place, index) of places">
               <h3>{{place.name}}</h3>
               <div v-if="place.place_name">{{place.place_name}}</div>
@@ -64,7 +72,7 @@
                   <a v-if="place.directionLink" class="link" :href="place.directionLink" target="_blank">Get Directions</a>
                 </div>
 
-                <b-img alt="Decorative floral typeographical ornament divider" v-if="index!==places.length-1" class="pl-4 pt-2" :src="hasCoords ? '/narrow-divider.png' : '/wide-divider.png'" />
+                <!-- <b-img alt="Decorative floral typeographical ornament divider" v-if="index!==places.length-1" class="pl-4 pt-2" :src="hasCoords ? '/narrow-divider.png' : '/wide-divider.png'" />
               <!--{{place}}<br /><br />-->
             </li>
            
