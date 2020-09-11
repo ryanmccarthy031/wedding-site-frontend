@@ -25,7 +25,11 @@ export default {
                 // hid is used as unique identifier. Do not use `vmid` for it as it will not work
                 { hid: 'description', name: 'description', content: 'Wedding webside for Leigh Graziano and Ryan McCarthy, June 17th, 2021.' },
                 { hid: 'robots', name: 'robots', content: 'noindex, nofollow' },
-            ]
+            ],
+            htmlAttrs: {
+                lang: 'en-US',
+                amp: true,
+            },
         }
     },
     async created () {
