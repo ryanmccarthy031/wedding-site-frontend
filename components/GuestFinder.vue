@@ -2,15 +2,14 @@
     <b-row class="justify-content-md-center">
         <b-col md="8">
             <label for="name">Enter your name as it appears on the invitation</label>
-                <b-form-input 
-                    class="mb-4"
-                    type="text"
-                    id="name" 
-                    v-model="name" 
-                    @input="getGuest($event)"
-                    placeholder="Enter your name">
-                    <b-spinner small variant="primary" type="grow" label="Spinning"></b-spinner>
-                </b-form-input>
+            <b-form-input 
+                class="mb-4"
+                type="text"
+                id="name" 
+                v-model="name" 
+                @input="getGuest($event)"
+                placeholder="Enter your name">
+            </b-form-input>
             <b-spinner 
                 v-if="searching"
                 type="grow" 
