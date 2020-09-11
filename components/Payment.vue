@@ -5,8 +5,8 @@
                     <transition name="slide-out">
                         <b-card  v-if="!successfulCharge"  class="justify-content-md-center">
                             <b-card-title>Honeymoon Fund</b-card-title>
-                            <b-row>
-                                <b-col sm="8">
+                            <b-row class="px-2">
+                                <b-col class="px-1" sm="8">
                                     <b-form-input 
                                         class="mb-2"
                                         id="name"
@@ -18,7 +18,7 @@
                                         trim>
                                     </b-form-input>
                                 </b-col>
-                                <b-col sm="4">
+                                <b-col class="px-1" sm="4">
                                     <currency-input
                                         class="form-control mb-2"
                                         id="amount"

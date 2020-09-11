@@ -4,10 +4,9 @@
             class="d-flex">
             Contact Info
         </b-card-title>
-            <b-card-text>Be sure to leave us an email, so we can share the pictures with you when they're available!</b-card-text>
-              <b-row>
-
-            <b-col md="6">
+        <b-card-text>Be sure to leave us an email, so we can share the pictures with you when they're available!</b-card-text>
+        <b-row class="px-2">
+            <b-col class="px-1" md="6">
                 <b-input-group 
                     v-for="(email, index) in emails"     
                     :key="`email_${index}`"             
@@ -36,7 +35,7 @@
                     </b-input-group-append>
                 </b-input-group>
             </b-col>
-                        <b-col md="6">
+            <b-col  class="px-1" md="6">
                 <b-input-group
                     v-for="(phone, index) in phones"     
                     :key="`phone_${index}`"             
@@ -67,8 +66,9 @@
                 </b-input-group>
             </b-col>
         </b-row>
-        <b-row>
+        <b-row class="px-2">
             <b-col 
+                class="px-1"
                 v-for="(field, key) in computedAddress"
                 :key="`address_field_${key}`"
                 :sm="getWidth(key)">
@@ -83,7 +83,6 @@
                 </b-form-input>
             </b-col>
         </b-row>
-  
     </div>
 
 </template>
