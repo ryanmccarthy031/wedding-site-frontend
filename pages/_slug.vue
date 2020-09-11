@@ -64,7 +64,7 @@
                   <a v-if="place.directionLink" class="link" :href="place.directionLink" target="_blank">Get Directions</a>
                 </div>
 
-                <b-img v-if="index!==places.length-1" class="pl-4 pt-2" :src="hasCoords ? '/narrow-divider.png' : '/wide-divider.png'" />
+                <b-img alt="Decorative floral typeographical ornament divider" v-if="index!==places.length-1" class="pl-4 pt-2" :src="hasCoords ? '/narrow-divider.png' : '/wide-divider.png'" />
               <!--{{place}}<br /><br />-->
             </li>
            
