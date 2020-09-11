@@ -1,14 +1,14 @@
 <template>
     <b-container>
-      <b-row class="justify-content-md-center mb-4">
-        <b-col md="6">
-          <div class="content columns is-mobile">
-            <div class="text-justify">
-                <div>Be sure to fill out everything before you hit save! And remember, you can come back any time and change your answers!</div>
+        <b-row class="justify-content-md-center mb-4">
+            <b-col  lg="6" md="8">
+            <div class="content columns is-mobile">
+                <div class="text-justify">
+                    <div>Be sure to fill out everything before you hit save! And remember, you can come back any time and change your answers!</div>
+                </div>
             </div>
-          </div>
-        </b-col>
-      </b-row>
+            </b-col>
+        </b-row>
         <b-row>
             <b-col
                 lg="3">
@@ -27,20 +27,39 @@
             </b-col>
             <b-col lg="9" class="mb-4">
                 <b-card no-body>
-                    <b-tabs card>
-                    <b-tab v-if="!guestIsComing" title="Email" active><EmailCard ref="email" /></b-tab>
-                    <b-tab v-if="guestIsComing" title="Guests" active>
-                        <AttendanceCard 
-                            ref="attendance"
-                            v-if="guestIsComing" />
-                    </b-tab>
-                    <b-tab v-if="guestIsComing" title="Contact Info">
-                        <AddressCard ref="address" />
-                    </b-tab>
-                    <b-tab v-if="guestIsComing" title="Song Requests">
-                        <SongRequestCard ref="song" :guestId="this.guest.id" />
-                    </b-tab>           
-                    <b-tab title="Comments"><CommentCard ref="comment" /></b-tab>
+                    <b-tabs justified pills card>
+                        <b-tab v-if="!guestIsComing" active>
+                            <template v-slot:title>
+                                <span>Email</span>
+                            </template>
+                            <EmailCard ref="email" />
+                        </b-tab>
+                        <b-tab v-if="guestIsComing" active>
+                            <template v-slot:title>
+                                <span>Guests</span>
+                            </template>
+                            <AttendanceCard 
+                                ref="attendance"
+                                v-if="guestIsComing" />
+                        </b-tab>
+                        <b-tab v-if="guestIsComing">
+                            <template v-slot:title>
+                                <span>Contact Info</span>
+                            </template>
+                            <AddressCard ref="address" />
+                        </b-tab>
+                        <b-tab v-if="guestIsComing">
+                            <template v-slot:title>
+                                <span>Song Requests</span>
+                            </template>
+                            <SongRequestCard ref="song" :guestId="this.guest.id" />
+                        </b-tab>           
+                        <b-tab>
+                            <template v-slot:title>
+                                <span>Comments</span>
+                            </template>
+                            <CommentCard ref="comment" />
+                        </b-tab>
                     </b-tabs>
                 </b-card>
             </b-col>

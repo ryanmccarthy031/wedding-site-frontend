@@ -20,6 +20,7 @@
                     </b-form-input>
                     <b-input-group-append>
                         <b-button
+                            v-if="emails.length>1 || emails[index].email"
                             @click="removeEmail(index)"
                             variant="outline-danger">
                             <b-icon
@@ -49,6 +50,7 @@
                     </b-form-input>
                     <b-input-group-append>
                         <b-button 
+                            v-if="phones.length>1 || phones[index].phone_number"
                             @click="removePhone(index)"
                             variant="outline-danger">
                             <b-icon

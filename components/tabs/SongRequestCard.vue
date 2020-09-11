@@ -31,6 +31,7 @@
                             type="text">
                         </b-form-input>
                         <b-button
+                            v-if="songs.length>1 || song.title || song.artist"
                             class="w-100 mb-2"
                             @click="remove(index)"
                             variant="outline-danger">
