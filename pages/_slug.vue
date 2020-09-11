@@ -21,10 +21,15 @@
             fade
             controls
             indicators>
-            <b-carousel-slide
+            <b-carousel-slide 
               v-for="(photo, index) in currentPage.carouselPhotos"
-              :key="`carousel-photo-${index}`" 
-              :img-src="photo.url" />
+              :key="`carousel-photo-${index}`">
+              <template v-slot:img>
+                <b-img-lazy
+                  class="d-block img-fluid w-100"
+                  :src="photo.url"
+                  :alt="photo.alternativeText" />
+              </template>
           </b-carousel>
         </b-col>
       </b-row>
