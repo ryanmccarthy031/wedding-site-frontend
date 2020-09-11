@@ -256,9 +256,9 @@ div[role=navigation].stuck {
       color: darken($primary, 20%);
     }
     &:active {
-      color: $yellow;
+      color: lighten($primary,20%);
       &::after {
-        background-color: $yellow;
+        background-color: lighten($primary,20%);
       }
     }
     &:hover::after, &:focus::after {
