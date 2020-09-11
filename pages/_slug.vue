@@ -86,10 +86,10 @@
           <GuestManager v-if="$store.state.currentGuest.hasOwnProperty('name')" />
           <GuestFinder v-else />
     </div>
-    <b-container
+    <div
       v-if="currentPage.is_payments">
       <Payment />
-    </b-container>
+    </div>
   </section>
 </template>
 

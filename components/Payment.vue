@@ -3,12 +3,14 @@
             <b-row :class="successfulCharge ? 'thanks' : 'payment' " class="justify-content-md-center">
                 <b-col lg="6" md="8">
                     <transition name="slide-out">
-                        <b-card  v-if="!successfulCharge"  class="w-100 position-absolute justify-content-md-center">
+                        <b-card  v-if="!successfulCharge"  class="justify-content-md-center">
                             <b-card-title>Honeymoon Fund</b-card-title>
                             <b-row>
                                 <b-col sm="8">
                                     <b-form-input 
                                         class="mb-2"
+                                        id="name"
+                                        name="name"
                                         placeholder="Name" 
                                         v-model="name"
                                         @input="validate('name')"
@@ -19,6 +21,8 @@
                                 <b-col sm="4">
                                     <currency-input
                                         class="form-control mb-2"
+                                        id="amount"
+                                        name="amount"
                                         placeholder="Amount"
                                         v-model="amount"
                                         @input="validate('amount')"
@@ -31,6 +35,8 @@
                                 <b-col md="12">
                                     <b-form-input 
                                         class="mb-2"
+                                        id="email"
+                                        name="email"
                                         placeholder="Email" 
                                         v-model="email"
                                         @input="validate('email')"
@@ -63,7 +69,7 @@
                         </b-card>
                     </transition>
                     <transition name="slide-in">
-                        <div v-if="successfulCharge" class="w-100 position-absolute text-center">
+                        <div v-if="successfulCharge" class="text-center">
                             <h3>
                                 Thanks!
                             </h3>
