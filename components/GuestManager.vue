@@ -27,14 +27,14 @@
             </b-col>
             <b-col lg="9" class="mb-4">
                 <b-card no-body>
-                    <b-tabs justified pills card>
-                        <b-tab v-if="!guestIsComing" active>
+                    <b-tabs v-model="tabIndex" justified pills card>
+                        <b-tab v-if="!guestIsComing" key="1" active>
                             <template v-slot:title>
                                 <span>Email</span>
                             </template>
                             <EmailCard ref="email" />
                         </b-tab>
-                        <b-tab v-if="guestIsComing" active>
+                        <b-tab v-if="guestIsComing" key="2" active>
                             <template v-slot:title>
                                 <span>Guests</span>
                             </template>
@@ -42,19 +42,19 @@
                                 ref="attendance"
                                 v-if="guestIsComing" />
                         </b-tab>
-                        <b-tab v-if="guestIsComing">
+                        <b-tab v-if="guestIsComing" key="3">
                             <template v-slot:title>
                                 <span>Contact Info</span>
                             </template>
                             <AddressCard ref="address" />
                         </b-tab>
-                        <b-tab v-if="guestIsComing">
+                        <b-tab v-if="guestIsComing" key="4">
                             <template v-slot:title>
                                 <span>Song Requests</span>
                             </template>
                             <SongRequestCard ref="song" :guestId="this.guest.id" />
                         </b-tab>           
-                        <b-tab>
+                        <b-tab key="5">
                             <template v-slot:title>
                                 <span>Comments</span>
                             </template>
@@ -97,6 +97,7 @@
             return {
                 saving: false,
                 isComing: null,
+                tabIndex: 0,
             }
         },
         methods: {
@@ -175,6 +176,7 @@
             guestIsComing: {
                 set (val) {
                     this.isComing = val
+                    this.tabIndex=0
                 },
                 get () {
                     if (this.isComing===null) return this.guest.is_coming
