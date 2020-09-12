@@ -147,18 +147,18 @@ ul {
     max-width: 30rem;
   }
 }
-li.narrow:after {
+.place.narrow:after {
   height: 30px;
   background-image: url('/narrow-divider.png');
   background-position: 20% 50%;
 
 }
-li.wide:after {
+.place.wide:after {
   height: 40px;
   background-image: url('/wide-divider.png');
   background-position: center;
 }
-li:after {
+.place:after {
   display:block;
   margin-top: $spacer;
   content: '';
