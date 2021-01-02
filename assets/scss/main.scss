@@ -114,7 +114,6 @@ body {
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-strong;
-    margin-bottom: 0.8rem;
 }
 strong {
   font-family: $font-family-strong;
@@ -159,6 +158,9 @@ footer .row div {
             opacity: 1;
         }
     }
+}
+#carousel-fade {
+  max-height: 337px;
 }
 .place h3 {
     font-size: 1.15rem;
@@ -244,6 +246,9 @@ nav {
         img {
             min-height: auto;
         }
+    }
+    #carousel-fade {
+      max-height: 302px;
     }
 }
 
