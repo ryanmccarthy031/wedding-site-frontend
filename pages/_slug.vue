@@ -19,6 +19,7 @@
         <b-col lg="6" md="8">
           <b-carousel
             id="carousel-fade"
+            img-height="300"
             fade
             controls
             indicators>
