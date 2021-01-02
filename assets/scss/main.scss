@@ -258,6 +258,7 @@ div[role=navigation].stuck {
 }
 .content p:first-of-type::first-letter {
   color: $danger;
+  font-family: $font-family-cursive;
   float: left;
   font-size: 3rem;
   line-height: 2.3rem;
