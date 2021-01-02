@@ -34,6 +34,7 @@
             <b-col>
               <h1 :class="currentSlug==='home' ? 'home' : 'secondary text-center'">
                   <span
+                    :key="`host_${index}`"
                     v-for="(name, index) in $store.state.names">
                       <b-row  class="text-center p-0 m-0">
                         <b-col class=" p-0 m-0">
@@ -42,8 +43,8 @@
                       </b-row>
                       <b-row class="p-0 m-0">
                         <b-col  class="text-center p-0 m-0">
-                          <span class='mx-auto conjunction' sm v-if="index<$store.state.names.length - 1" >
-                            and
+                          <span class='mx-auto conjunction flourish' sm v-if="index<$store.state.names.length - 1" >
+                            &amp;
                           </span>
                         </b-col>
                       </b-row>
