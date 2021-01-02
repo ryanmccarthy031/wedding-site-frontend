@@ -252,7 +252,11 @@ nav {
       max-height: 302px;
     }
 }
-
+@media (min-width: 1200px) {
+  #carousel-fade {
+    max-height: 368px;
+  }
+}
 .toggler-box {
     background-color: transparent;
     position: absolute;
