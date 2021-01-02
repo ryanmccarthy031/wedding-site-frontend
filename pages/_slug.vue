@@ -84,11 +84,11 @@
           md="6"
           v-if="hasCoords"
           class="column map">
-          <b-card 
+          <div 
             class="w-100 h-100" 
             no-body>
             <Map :places="places"/>
-          </b-card>
+          </div>
         </b-col>
       </b-row>
     </b-container>
