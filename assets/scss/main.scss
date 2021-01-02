@@ -65,7 +65,7 @@ $success: $green;
 $info: $cyan;
 $warning: $orange;
 $danger: $red;
-$light: $gray-200;
+$light: $gray-100;
 $dark: $gray-800;
 
 // This table defines the theme colors (variant names)
@@ -84,7 +84,7 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-$body-bg: $gray-200;
+$body-bg: $gray-100;
 $sidebar-bg: $gray-300;
 $body-color: $gray-800;
 
