@@ -124,14 +124,13 @@ export default {
       families: [
         'IM Fell English:n4',
         'IM Fell English SC:n4',
-        'Monsieur La Doulaise:n4',
+        'Hobbiton Brushhand:n4',
       ],
       urls: [
           // for each Google Fonts add url + options you want
           // here add font-display option
           'https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap',
           'https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap',
-          'https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap',
       ]
     },
     timeout: 2000,
