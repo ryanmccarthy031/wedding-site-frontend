@@ -31,7 +31,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/Hobbiton_Brushhand/HobbitonBrushhand.ttf') format('ttf');
+  src: url('~assets/fonts/Hobbiton_Brushhand/HobbitonBrushhand.ttf') format('truetype');
 }
 
 $white: #fff;
@@ -114,6 +114,7 @@ body {
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-strong;
+    margin-bottom: 0.8rem;
 }
 strong {
   font-family: $font-family-strong;
