@@ -206,7 +206,7 @@ export default {
     background-color: #fff;
     background-clip: padding-box;
     font-family: "IM Fell English";
-    border: 1px solid #cdd0ae;
+    border: 1px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }

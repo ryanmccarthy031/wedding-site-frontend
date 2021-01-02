@@ -52,9 +52,9 @@
                 return {
                     icon: {
                         path: 'M 0,0 C -12,-20 -10,-22 -10,-25 A 10,10 0 1,1 10,-25 C 10,-25 12,-20 0,0 z',
-                        fillColor: '#33322a',
+                        fillColor: '#343a40',
                         fillOpacity: 1,
-                        strokeColor: '#fcfbf3',
+                        strokeColor: '#f8f9fa',
                         strokeWeight: 1,
                         scale: 1.25,
                         labelOrigin: {
@@ -64,7 +64,7 @@
                     },
                     label: {
                         text: label.toString(),
-                        color: "#fcfbf3",
+                        color: "#f8f9fa",
                         fontSize: "1rem",
                         fontFamily: 'IM Fell English',
                     },
@@ -87,13 +87,13 @@
                         featureType: "road",
                         elementType: "geometry",
                         // TODO: Set color variables for use here
-                        stylers: [{ color: '#f9f9ee' }]
+                        stylers: [{ color: '#f8f9fa' }]
                     }, 
                     {
                         featureType: 'all',
                         elementType: 'labels.text.stroke',
                         // TODO: Set color variables for use here
-                        stylers: [{ color: '#f9f9ee'}]
+                        stylers: [{ color: '#f8f9fa'}]
                     }
                 ]
             },
