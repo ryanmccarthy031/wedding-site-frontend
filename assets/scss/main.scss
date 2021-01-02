@@ -43,7 +43,7 @@ $gray-500: #adb5bd;
 $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
-$gray-900: #212529;
+$gray-900: #030303;
 $black: #000;
 
 // Base colors definitions
@@ -65,7 +65,7 @@ $success: $green;
 $info: $cyan;
 $warning: $orange;
 $danger: $red;
-$light: $gray-100;
+$light: $gray-200;
 $dark: $gray-800;
 
 // This table defines the theme colors (variant names)
@@ -84,8 +84,8 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
-$body-bg: $gray-100;
-$sidebar-bg: $gray-200;
+$body-bg: $gray-200;
+$sidebar-bg: $gray-300;
 $body-color: $gray-800;
 
 $font-family-serif: 'IM Fell English', Georgia, "Times New Roman", Times, serif;

@@ -54,7 +54,7 @@
                         path: 'M 0,0 C -12,-20 -10,-22 -10,-25 A 10,10 0 1,1 10,-25 C 10,-25 12,-20 0,0 z',
                         fillColor: '#343a40',
                         fillOpacity: 1,
-                        strokeColor: '#f8f9fa',
+                        strokeColor: '#e9ecef',
                         strokeWeight: 1,
                         scale: 1.25,
                         labelOrigin: {
@@ -64,7 +64,7 @@
                     },
                     label: {
                         text: label.toString(),
-                        color: "#f8f9fa",
+                        color: "#e9ecef",
                         fontSize: "1rem",
                         fontFamily: 'IM Fell English',
                     },
@@ -83,24 +83,38 @@
             },
             mapStyle () {
                 return [
+
+                    {
+                        featureType: "landscape.man_made",
+                        elementType: "geometry",
+                        // TODO: Set color variables for use here
+                        stylers: [{ color: '#adb5bd' }]
+                    }, 
                     {
                         featureType: "road",
                         elementType: "geometry",
                         // TODO: Set color variables for use here
-                        stylers: [{ color: '#f8f9fa' }]
-                    }, 
+                        stylers: [{ color: '#e9ecef' }]
+                    },
                     {
                         featureType: 'all',
                         elementType: 'labels.text.stroke',
                         // TODO: Set color variables for use here
-                        stylers: [{ color: '#f8f9fa'}]
-                    }
+                        stylers: [{ color: '#e9ecef'}]
+                    },
+                    {
+                        featureType: 'all',
+                        elementType: 'labels.text.fill',
+                        // TODO: Set color variables for use here
+                        stylers: [{ color: '#343a40'}]
+                    },
                 ]
             },
             options () {
                 return {
                     fullscreenControl: true,
                     center: this.currentLocation,
+                    backgroundColor: '#e9ecef',
                     zoom: 14,
                     styles: this.mapStyle,
                     streetViewControl: true,
