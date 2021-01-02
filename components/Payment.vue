@@ -123,9 +123,9 @@ export default {
                     base: {
                         fontFamily: "'IM Fell English', Georgia, 'Times New Roman', Times, serif",
                         fontSize: '18px',
-                        color: '#33322a',
+                        color: '#343a40',
                         '::placeholder': {
-                            color: '#777d62',
+                            color: '#6c757d',
                         },
                     },
                 },
@@ -202,7 +202,7 @@ export default {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #777d62;
+    color: #6c757d;
     background-color: #fff;
     background-clip: padding-box;
     font-family: "IM Fell English";
@@ -212,7 +212,7 @@ export default {
 }
 
 .StripeElement--focus {
-    color: #777d62;
+    color: #6c757d;
     background-color:#fff;
     border-color: #79b4f3;
     outline: 0;
@@ -224,7 +224,7 @@ export default {
 }
 
 .StripeElement--webkit-autofill {
-    background-color: #fcfbf3 !important;
+    background-color: #f8f9fa !important;
 }
 
 /* Enter and leave animations can use different */
