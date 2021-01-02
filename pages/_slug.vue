@@ -6,6 +6,7 @@
           <h2 class="text-center mb-5">{{currentPage.title}}</h2>
           <div class="content columns is-mobile">
             <div class="text-justify"
+              :key="`page_${index}`"
               v-for="(text, index) of currentPage.text">
                 <div v-if="text.paragraph" v-html="$md.render(text.paragraph)"></div>
             </div>
@@ -50,6 +51,7 @@
                 'place', 
                 'mb-4'
               ]"
+              :key="`list_item_${index}`"
               v-for="(place, index) of places">
               <h3>{{place.name}}</h3>
               <div v-if="place.place_name">{{place.place_name}}</div>
@@ -73,7 +75,7 @@
                 </div>
 
                 <!-- <b-img alt="Decorative floral typeographical ornament divider" v-if="index!==places.length-1" class="pl-4 pt-2" :src="hasCoords ? '/narrow-divider.png' : '/wide-divider.png'" />
-              <!--{{place}}<br /><br />-->
+                {{place}}<br /><br />-->
             </li>
            
           </component>
