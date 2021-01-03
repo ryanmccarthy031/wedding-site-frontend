@@ -21,7 +21,7 @@
 
           <b-navbar-toggle class="toggler position-fixed d-block d-sm-none" target="sidebar">
             <template v-slot:default="{ expanded }">
-              <span class="hamburger hamburger--squeeze" :class="{ 'is-active': expanded }" type="button">
+              <span class="hamburger hamburger--squeeze" :class="{ 'is-active': expanded }">
                 <span class="hamburger-box">
                   <span class="hamburger-inner"></span>
                 </span>
