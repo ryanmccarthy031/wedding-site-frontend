@@ -134,7 +134,7 @@ strong {
       background-image: linear-gradient(0, $body-bg, rgba(255,255,255,0) 95%);
     }
     h1 {
-      color: transparent;
+      color: rgba(255,255,255,0);
       .wf-active & {
         color: $body-color;
       }
@@ -258,7 +258,7 @@ nav {
   }
 }
 .toggler-box {
-    background-color: transparent;
+    background-color: rgba(255,255,255,0);
     position: absolute;
 
 }
@@ -433,7 +433,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter;
     font: inherit;
     color: inherit;
     text-transform: none;
-    background-color: transparent;
+    background-color: rgba(255,255,255,0);
     border: 0;
     margin: 0;
     overflow: visible;
