@@ -177,6 +177,7 @@
                 }
                 const emails = this.emails.length===1 && this.emails[0].email==='' ? [] : this.emails
 
+                this.validateEmail()
                 if (this.emailState===false) return false
                 for (const key in this.currentAddress) {
                     if (this.currentAddress[key].state===false) return false
