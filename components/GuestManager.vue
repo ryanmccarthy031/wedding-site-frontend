@@ -138,8 +138,15 @@
                         songs,
                     }
                 } else {
-                    const { email } = this.$refs.email.processData()
-                    guest = { email }
+                    const data = this.$refs.email.processData()
+                    if (!data) {
+                        return this.$bvToast.toast('It looks like you didn\'t leave us an email address.', {
+                            title: `Something is missing`,
+                            variant: 'danger',
+                            solid: true
+                        })
+                    }
+                    guest = { email: data.email }
                 }
                 const { comment } = this.$refs.comment.processData()
                 guest.comment = comment

@@ -15,6 +15,7 @@
                         placeholder="Email"
                         @input="handleEmailInput($event, index)"
                         :value="emails[index].email"
+                        :state="emailState"
                         type="email">
                     </b-form-input>
                     <b-input-group-append>
@@ -136,6 +137,7 @@
                 currentZipCode: null,
                 currentEmails: [],
                 currentPhones: [],
+                emailState: null,
             }
         },
         directives: {mask},
@@ -154,7 +156,11 @@
                     } else {
                         this.currentAddress[key].state = null
                     }
+                    this.validateEmail()
                 }
+            },
+            validateEmail () {
+                this.emailState = !(this.currentEmails || []).length ? false : null
             },
             processData () {
                 for (let i=this.phones.length - 1; i>=0; i--) {
@@ -171,7 +177,7 @@
                 }
                 const emails = this.emails.length===1 && this.emails[0].email==='' ? [] : this.emails
 
-
+                if (this.emailState===false) return false
                 for (const key in this.currentAddress) {
                     if (this.currentAddress[key].state===false) return false
                 }
@@ -224,6 +230,7 @@
                 const emails = [ ...this.emails ]
                 emails[index] = {email: val}
                 this.emails = emails
+                this.validateEmail()
             },
         },
         computed: {

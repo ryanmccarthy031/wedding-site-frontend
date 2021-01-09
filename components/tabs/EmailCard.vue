@@ -16,6 +16,7 @@
                     placeholder="Email"
                     @input="handleEmailInput($event, index)"
                     :value="emails[index].email"
+                    :state="emailState"
                     type="email">
                 </b-form-input>
                 <b-input-group-append>
@@ -45,9 +46,13 @@
             return {
                 saving: false,
                 currentEmails: [],
+                emailState: null,
             }
         },
         computed: {
+            validateEmail () {
+                this.emailState = !(this.currentEmails || []).length ? false : null
+            },
             guestEmails () {
                 return [...this.$store.state.currentGuest.email]
             },
@@ -87,6 +92,7 @@
                 const emails = [ ...this.emails ]
                 emails[index] = {email: val}
                 this.emails = emails
+                this.validateEmail()
             },
             processData () {
                 for (let i=this.emails.length - 1; i>=0; i--) {
@@ -94,6 +100,7 @@
                         this.removeEmail(i)
                     }
                 }
+                if (this.emailState===false) return false
                 return { email: this.emails}
             },
         }
