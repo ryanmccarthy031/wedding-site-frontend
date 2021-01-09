@@ -139,7 +139,7 @@
                         songs,
                     }
                 } else {
-                    this.$refs.address.validateEmail()
+                    this.$refs.email.validateEmail()
                     const data = this.$refs.email.processData()
                     if (!data) {
                         return this.$bvToast.toast('It looks like you didn\'t leave us an email address.', {
