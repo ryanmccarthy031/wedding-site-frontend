@@ -106,6 +106,7 @@
                 let guest = {}
                 if (this.guestIsComing) {
                     this.$refs.address.validate()
+                    this.$refs.address.validateEmail()
                     const guestAddress = this.$refs.address.processData()
                     if (guestAddress===false) {
                         this.saving=false
@@ -138,6 +139,7 @@
                         songs,
                     }
                 } else {
+                    this.$refs.address.validateEmail()
                     const data = this.$refs.email.processData()
                     if (!data) {
                         return this.$bvToast.toast('It looks like you didn\'t leave us an email address.', {

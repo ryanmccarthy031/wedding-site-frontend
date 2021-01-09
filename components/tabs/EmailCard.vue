@@ -50,9 +50,6 @@
             }
         },
         computed: {
-            validateEmail () {
-                this.emailState = !(this.currentEmails || []).length ? false : null
-            },
             guestEmails () {
                 return [...this.$store.state.currentGuest.email]
             },
@@ -77,6 +74,9 @@
             },
         },
         methods: {
+            validateEmail () {
+                this.emailState = !(this.currentEmails || []).length ? false : null
+            },
             addEmail () {
                 const emails = [ ...this.emails ]
                 emails.push({email:''})
@@ -100,6 +100,7 @@
                         this.removeEmail(i)
                     }
                 }
+                console.log(this.emailState)
                 if (this.emailState===false) return false
                 return { email: this.emails}
             },
