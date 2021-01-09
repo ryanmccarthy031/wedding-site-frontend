@@ -140,6 +140,7 @@
                 } else {
                     const data = this.$refs.email.processData()
                     if (data===false) {
+                        this.saving=false
                         return this.$bvToast.toast('It looks like you didn\'t leave us an email address.', {
                             title: `Something is missing`,
                             variant: 'danger',

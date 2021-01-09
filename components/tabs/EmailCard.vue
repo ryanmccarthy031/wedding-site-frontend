@@ -102,7 +102,6 @@
                     }
                 }
                 this.validateEmail()
-                console.log("DDDDDD", this.emailState)
                 if (this.emailState===false) return false
                 return { email: this.emails}
             },
