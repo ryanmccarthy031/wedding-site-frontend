@@ -160,7 +160,8 @@
                 }
             },
             validateEmail () {
-                this.emailState = !(this.currentEmails || []).length ? false : null
+                const emails = this.currentEmails.filter(single=>single.email!=='')
+                this.emailState = !emails.length ? false : null
             },
             processData () {
                 for (let i=this.phones.length - 1; i>=0; i--) {
