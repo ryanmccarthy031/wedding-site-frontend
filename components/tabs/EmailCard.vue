@@ -75,6 +75,9 @@
         },
         methods: {
             validateEmail () {
+                console.log("$$$$$$$$$")
+                console.log((this.currentEmails || []).length)
+                console.log(this.currentEmails)
                 this.emailState = !(this.currentEmails || []).length ? false : null
             },
             addEmail () {
